@@ -456,9 +456,21 @@
 .combo i{width:16px;height:16px;border-radius:50%;border:1px solid rgba(58,42,36,.3);display:inline-block;margin-right:-2px}
 .combo i+i{margin-left:-8px}
 .combo.sel{border-color:var(--wine);box-shadow:0 0 0 2px rgba(139,46,63,.2)}
+
+/* ===== BANDEAU PROMO ANIME ===== */
+.promo-bar{position:relative;z-index:55;overflow:hidden;white-space:nowrap;color:#fff;font-size:.88rem;font-weight:600;padding:10px 0;background:linear-gradient(90deg,var(--wine-deep),var(--wine),var(--rose),var(--wine),var(--wine-deep));background-size:300% 100%;animation:promoShine 8s linear infinite}
+.promo-track{display:inline-flex;animation:promoScroll 26s linear infinite;will-change:transform}
+.promo-track span{padding:0 34px;display:inline-block}
+.promo-track b{color:#FFE7A8;animation:promoPulse 1.8s ease-in-out infinite;display:inline-block}
+@keyframes promoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes promoShine{from{background-position:0 0}to{background-position:300% 0}}
+@keyframes promoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@media(prefers-reduced-motion:reduce){.promo-track,.promo-bar,.promo-track b{animation:none}}
 </style>
 </head>
 <body class="texture">
+
+<div class="promo-bar" aria-label="Offre : après 2 commandes, la 3e est à -45 %"><div class="promo-track"><span>🎁 Après 2 commandes, la 3e est à <b>-45 %</b> ✦</span><span>🎁 Après 2 commandes, la 3e est à <b>-45 %</b> ✦</span><span>🎁 Après 2 commandes, la 3e est à <b>-45 %</b> ✦</span><span>🎁 Après 2 commandes, la 3e est à <b>-45 %</b> ✦</span><span>🎁 Après 2 commandes, la 3e est à <b>-45 %</b> ✦</span><span>🎁 Après 2 commandes, la 3e est à <b>-45 %</b> ✦</span></div></div>
 
 <header>
   <nav>
@@ -470,6 +482,7 @@
       <a href="#chapeaux">Chapeaux</a>
       <a href="#bandeaux">Bandeaux</a>
       <a href="#pack">Accessoires</a>
+    <a href="#laine">Laine</a>
     </div>
     <a class="nav-cta" href="#commander">Commander</a>
   </nav>
@@ -725,6 +738,7 @@
     <input id="cName" placeholder="Ton prénom"><input id="cCity" placeholder="Ta ville">
     <div class="c-total"><span>Total</span><span id="cTotal">0 DH</span></div>
     <div class="c-note">Livraison en plus : 15 DH à Fès, 35 DH ailleurs au Maroc.</div>
+    <div class="c-note" style="color:var(--wine);font-weight:600">🎁 Déjà 2 commandes ? Ta 3e est à -45 % : dis-le-moi sur WhatsApp.</div>
     <button class="c-send" id="cSend" disabled>Envoyer la commande sur WhatsApp</button>
   </div>
 </aside>
